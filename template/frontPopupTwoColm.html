@@ -1,0 +1,82 @@
+<div>
+
+	<div class="modal-header modal-header-extd">
+		<h3><%= $xc.screen_name %></h3> 
+	</div>
+
+	<div class="modal-body">
+		<form class="form-horizontal" role="form">
+			<table>
+<%- $xc.items.each do |item| -%>
+	<%- if item.control_type == 'textarea'-%>
+				<tr>
+					<td>
+						<%= item.control_title_two %>
+					</td>
+					<td colspan="3">
+						<div>
+						<% if item.checks.size > 0 %>
+							<textarea class="ui-textarea" cols="20" rows="3" ng-model="item.<%= item.item_name %>" ng-change="<%= item.html_element_id %>Check()" ng-blur="<%= item.html_element_id %>Check()" />
+						<% else %>
+							<textarea class="ui-textarea" cols="20" rows="3" ng-model="item.<%= item.item_name %>" />
+						<% end %>
+						</div>
+					</td>
+				</tr>
+	<%- else -%>
+		<%- if item.side == 'L' -%>
+				<tr>
+		<%- end -%>
+			<%- if item.control_type == 'placeholder'-%>
+					<td></td>
+					<td></td>
+			<%- elsif item.control_type == 'dropdown'-%>
+					<td>
+						<%= item.control_title_two %>
+					</td>
+					<td>
+						<div>
+							<select class="form-control" id="<%= item.html_element_id %>" ng-model="formItem.<%= item.item_name %>" ng-options="c.valueForDisplay for c in <%= item.return_value %>" ng-change="clearError()" pa-combobox></select>
+						</div>
+					</td>
+			<%- elsif item.control_type == 'text' || item.control_type == 'text2' -%>
+					<td>
+						<%= item.control_title_two %>
+					</td>
+					<td>
+						<div>
+						<% if item.checks.size > 0 %>
+							<input class="form-control add_form_text_input" type="text" ng-model="item.<%= item.item_name %>" ng-change="<%= item.html_element_id %>Check()" ng-blur="<%= item.html_element_id %>Check('blur')" ng-focus="<%= item.html_element_id %>Focus()" <% if item.control_type == 'text2' %> pa-input="trimAndToUpperCase" <% end %>/>
+						<% else %>
+							<input class="form-control add_form_text_input" type="text" ng-model="item.<%= item.item_name %>" <% if item.control_type == 'text2' %> pa-input="trimAndToUpperCase" <% end %>/>
+						<% end %>
+						</div>
+					</td>
+			<%- elsif item.control_type == 'checkbox'-%>
+					<td>
+						<%= item.control_title_two %>
+					</td>
+					<td>
+						<div style="padding-top:8px;">
+							<label for="<%= item.html_element_id %>" class="cb-label"><span></span></label>
+							<input class="cstmeinput" type="checkbox" id="<%= item.html_element_id %>" name="<%= item.item_name %>" ng-model="formItem.<%= item.item_name %>" pa-checkbox />
+						</div>
+					</td>
+			<%- end -%>
+		<%- if item.side == 'R' -%>
+				</tr>
+		<%- end -%>
+	<%- end -%>
+<%- end -%>
+			</table>
+		</form>
+	</div>
+
+	<div class="modal-custom-footer">
+		<a class="btn btn-Primary btn-add" ng-click="save()"><i class="icon-save"></i>Save</a>
+		<a class="btn btn-Secondary btn-cancel" ng-click="cancel()" style="border-top-right-radius: 5px; border-bottom-left-radius: 5px;"> <i class="icon-ban-circle"></i>Cancel</a>
+	</div>
+
+	<div class="alert error" ng-show="hasError">{{errorMessage}}</div>
+
+</div>

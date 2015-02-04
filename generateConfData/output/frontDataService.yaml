@@ -1,0 +1,18 @@
+--- !ruby/object:XDataSerive
+entity_list:
+- !ruby/object:XSeriveItem
+  entity_name: OptSqCtryBgExcp
+  read_all_service: getAllOptSqCtryBgExcp
+  save_service: saveOptSqCtryBgExcp
+  update_service: updateOptSqCtryBgExcp
+  delete_service: deleteOptSqCtryBgExcp
+  mass_delete_service: massDeleteOptSqCtryBgExcp
+  read_all_url: URL_GET_OPTSQCTRYBGEXCP
+  save_url: URL_SAVE_OPTSQCTRYBGEXCP
+  update_url: URL_UPDATE_OPTSQCTRYBGEXCP
+  delete_url: URL_DELETE_OPTSQCTRYBGEXCP
+  no_filter_url: URL_OPTSQCTRYBGEXCP_DATA
+  filter_url: URL_OPTSQCTRYBGEXCP_FILTERED_DATA
+  select_url: URL_OPTSQCTRYBGEXCP_SELECT_DATA
+  client_variable: promiseOptSqCtryBgExcp
+  client_variable_list: optSqCtryBgExcpList

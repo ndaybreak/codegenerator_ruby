@@ -1,0 +1,63 @@
+--- !ruby/object:XGrid
+two_columns: false
+show_scroll: false
+entity_name: OptSqCtryBgExcp
+entity_title: PQB Country/BG Exclusion
+doller_fields: []
+percent_fields: []
+input_date_fields:
+- lastModTs
+action: optSqCtryBgExcp
+colms_info:
+- - ''
+  - ''
+  - ''
+  - true
+  - ''
+- - Region
+  - rgnCdForDisplay
+  - rgnCd
+  - true
+  - pg-col-width
+- - Sub Region 1
+  - subregn1CdForDisplay
+  - subregn1Cd
+  - false
+  - pg-col-width
+- - Sub Region 2
+  - subregn2CdForDisplay
+  - subregn2Cd
+  - false
+  - pg-col-width
+- - Sub Region 3
+  - subregn3CdForDisplay
+  - subregn3Cd
+  - false
+  - pg-col-width
+- - Country
+  - cntryCdForDisplay
+  - cntryCd
+  - true
+  - pg-col-width
+- - Business Group
+  - busGrp
+  - busGrp
+  - true
+  - pg-col-width
+- - Note
+  - note
+  - note
+  - true
+  - pg-col-width
+- - Updated By
+  - lastModByEmail
+  - lastModById
+  - true
+  - pg-col-width
+- - Updated On
+  - lastModTs
+  - lastModTs
+  - true
+  - pg-col-width
+bigint_colms:
+- lastModById

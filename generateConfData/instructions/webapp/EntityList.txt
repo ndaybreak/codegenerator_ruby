@@ -1,0 +1,21 @@
+#OptBuCustExcp,BU-Customer Exception
+#OptCntryExcp,Country Exception
+#OptCurrExcp,Currency Exception
+#OptCustExcp,Customer Exception
+#OptCustSegExcp,Customer Segment Exception
+#OptDefaultPriceDesc,Default Price Descriptor Mappings
+#OptDefaultRevenueBucket,Deal Revenue Bucket Mappings
+#OptGuidanceDefaultPt,Guidance Default Points
+#OptGuidanceRoles,Guidance Roles
+#OptNonDiscProdExcp,Non-discountable Product Exception
+#OptPriceQualityBand,Price Quality Band
+#OptProdExcp,Product Exception
+#OptSqMccExcp,PQB MCC Exception
+#OptSqPricebookExcp,PQB Industry Name Exception
+#OptSysParam,System Parameters
+#OptThreshold,Price Method Threshold
+#OptUser,User
+#OptUserTest,User Test
+#OptPromo,Promo pricing
+#OptSqCustExcp,PQB Customer Level Exclusion
+OptSqCtryBgExcp,PQB Country/BG Exclusion

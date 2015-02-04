@@ -1,0 +1,55 @@
+<div>
+
+	<div class="modal-header modal-header-extd">
+		<h3>PQB Country/BG Exclusion</h3> 
+	</div>
+
+	<div class="modal-body">
+		<form class="form-horizontal" role="form">
+			<table>
+				<tr class="form-group">
+					<td style="vertical-align: top;">
+						<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable pa-edit-mandatory-label"> Country </label>
+					</td>
+					<td style="vertical-align: top;">
+						<div class="col-lg-7">
+							<select class="form-control" id="elCountry" ng-model="formItem.country" ng-options="c.valueForDisplay for c in countries" ng-change="clearError()" pa-combobox></select>
+						</div>
+					</td>
+				</tr>
+				<tr style="height: 15px;"></tr>
+				<tr class="form-group">
+					<td style="vertical-align: top;">
+						<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable pa-edit-mandatory-label"> Business Group</label>
+					</td>
+					<td style="vertical-align: top;">
+						<div class="col-lg-7">
+							<select class="form-control" id="elBusinessGroup" ng-model="formItem.businessGroup" ng-options="c.valueForDisplay for c in businessGroups" ng-change="clearError()" pa-combobox></select>
+						</div>
+					</td>
+				</tr>
+				<tr style="height: 15px;"></tr>
+				<tr class="form-group">
+					<td style="vertical-align: top;">
+						<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable"> Note</label>
+					</td>
+					<td style="vertical-align: top;">
+						<div class="col-lg-7">
+						
+							<textarea class="ui-textarea" cols="20" rows="3" ng-model="item.note" ng-change="elNoteCheck()" ng-blur="elNoteCheck()" />
+						
+						</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<div class="modal-custom-footer">
+		<a class="btn btn-Primary btn-add" ng-click="save()"><i class="icon-save"></i>Save</a>
+		<a class="btn btn-Secondary btn-cancel" ng-click="cancel()" style="border-top-right-radius: 5px; border-bottom-left-radius: 5px;"> <i class="icon-ban-circle"></i>Cancel</a>
+	</div>
+
+	<div class="alert error" ng-show="hasError">{{errorMessage}}</div>
+
+</div>
