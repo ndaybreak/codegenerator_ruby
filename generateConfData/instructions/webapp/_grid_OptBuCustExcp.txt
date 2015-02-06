@@ -1,0 +1,13 @@
+BU-Customer Exception
+
+
+'mdcpOrgId','amid2','lastModTs'
+optBuCustExcp
+'','Region','Sub Region 1','Sub Region 2','Sub Region 3','Country','Business Unit','MDCP Org ID','AMID2','Note','Updated By','Updated On'
+'','rgnCdForDisplay','subregn1CdForDisplay','subregn2CdForDisplay','subregn3CdForDisplay','cntryCdForDisplay','busUnitForDisplay','mdcpOrgId','amid2','note','lastModByEmail','lastModTs'
+'','rgnCd','subregn1Cd','subregn2Cd','subregn3Cd','cntryCd','busUnit','mdcpOrgId','amid2','note','lastModById','lastModTs'
+Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+'','pg-col-min-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-min-width','pg-col-min-width'
+'lastModById'
+N
+N

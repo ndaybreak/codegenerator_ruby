@@ -1,0 +1,13 @@
+Product Exception
+'cntryCd','prodLnId','prodFmlyId','note'
+'cntryCdForDisplay','prodLnIdForDisplay','prodFmlyIdForDisplay','note'
+
+'baseProd','lastModTs'
+optProdExcp
+'','Region','Sub Region 1','Sub Region 2','Sub Region 3','Country','Product Line','Product Family','Base Product','Note','Updated By','Updated On'
+'','rgnCdForDisplay','subregn1CdForDisplay','subregn2CdForDisplay','subregn3CdForDisplay','cntryCdForDisplay','prodLnIdForDisplay','prodFmlyIdForDisplay','baseProd','note','lastModByEmail','lastModTs'
+'','rgnCd','subregn1Cd','subregn2Cd','subregn3Cd','cntryCd','prodLnId','prodFmlyId','baseProd','note','lastModById','lastModTs'
+Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+'lastModById'
+N
+N

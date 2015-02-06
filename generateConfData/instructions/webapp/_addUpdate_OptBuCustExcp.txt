@@ -1,0 +1,5 @@
+getCountries|countries|0|admin|dropdown|cd|country|cntryCd|Country|Country|elCountry|elCountry|||Y|
+getBusinessUnits|businessUnits|0|admin|dropdown|cd|bunit|busUnit|Business Unit|Business Unit|elBunit|elBunit|||Y|
+||||text2||mdcpOrgId||MDCP Org ID|MDCP Org ID|elMdcpOrgId|elMdcpOrgId|'notNull','max32','digital'|MDCP Org ID is required.;Max length of MDCP Org ID is 32.;MDCP Org ID should be numeric.|Y|
+||||text||amid2||AMID2 *|AMID2|elAmid2|elAmid2|'notNull','max15'|Please input a valid AMID2 or an asterisk.;Max length of AMID2 is 15.|N|
+||||textarea||note||Note|Note|elNote|elNote|'max256orNull'|Max length of Note is 256.|N|

@@ -1,0 +1,6 @@
+getRouteToMarkets|routeToMarkets|0|admin|dropdown|cd|routeToMarket|routeToMarket|Route to Market|Route to Market|elRouteToMarket|elRouteToMarket|||Y|
+getRegions|regions||admin|dropdown|cd|region|region|Region |Region|elRegion|elRegion|||Y|
+getCountries|countries|0|admin|dropdown|cd|country|cntryCd|Country *|Country |elCountry|elCountry|||N|
+getBusinessGroups|businessGroups|0|admin|dropdown|cd|businessGroup|busGrpId|Business Group|Business Group|elBusinessGroup|elBusinessGroup|||Y|
+getbusinessModels|businessModels|0|admin|dropdown|cd|businessModel|busModelCd|Business Model *|Business Model|elBusinessModel|elBusinessModel|||N|
+||||textarea||note||Note|Note|elNote|elNote|'max256orNull'|Max length of Note is 256.|N|

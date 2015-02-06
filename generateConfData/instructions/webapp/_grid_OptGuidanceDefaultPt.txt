@@ -1,0 +1,13 @@
+Guidance Default Points
+
+'authAdjPct','defAdjPct',
+'lastModTs'
+optGuidanceDefaultPt
+'','Route to Market','Region','Sub Region 1','Sub Region 2','Sub Region 3','Country','Business Unit','Role','Negative Margin Approval Flag','Default Benchmark','Default Adjustment %','Auth Benchmark','Auth Adjustment %','Show Expert','Show Typical','Show Floor','Active','Note','Updated By','Updated On'
+'','routeToMarket','rgnCdForDisplay','subregn1CdForDisplay','subregn2CdForDisplay','subregn3CdForDisplay','cntryCdForDisplay','busUnitForDisplay','roleForDisplay','negMarginAprvlFgForDisplay','defBenchForDisplay','defAdjPct','authBenchForDisplay','authAdjPct','showExpFg','showTypFg','showFlrFg','activeFg','note','lastModByEmail','lastModTs'
+'','routeToMarket','region','subregn1Cd','subregn2Cd','subregn3Cd','cntryCd','busUnit','roleId','negMarginAprvlFg','defBench','defAdjPct','authBench','authAdjPct','showExpFg','showTypFg','showFlrFg','activeFg','note','lastModById','lastModTs'
+Y,Y,Y,N,N,N,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+'','pg-col-min-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-min-width','pg-col-min-width','pg-col-min-width','pg-col-min-width','pg-col-min-width','pg-col-min-width','pg-col-min-width','pg-col-min-width','pg-col-width','pg-col-width','pg-col-width'
+'lastModById'
+Y
+Y

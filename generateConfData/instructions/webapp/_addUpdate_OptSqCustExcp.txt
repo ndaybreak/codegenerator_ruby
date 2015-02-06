@@ -1,0 +1,3 @@
+||||text||custId||Customer|Customer|elCustomerId|elCustomerId|'notNull','max32'|Customer ID is required.;Max length of Customer ID is 32.|Y|
+getCustormerIdTypes|idTypes|0|admin|dropdown|cd|idType|idType|Customer Type|Customer Type|elIdType|elIdType|||Y|
+||||textarea||note||Note|Note|elNote|elNote|'max256orNull'|Max length of Note is 256.|N|

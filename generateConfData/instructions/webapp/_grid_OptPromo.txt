@@ -1,0 +1,13 @@
+Promo pricing
+
+
+'lastModTs'
+optPromo
+'','Route to Market','Region','Sub Region 1','Sub Region 2','Sub Region 3','Country','Business Group','Business Model','Note','Updated By','Updated On'
+'','routeToMarket','rgnCdForDisplay','subregn1CdForDisplay','subregn2CdForDisplay','subregn3CdForDisplay','cntryCdForDisplay','businessGroup','businessModel','note','lastModByEmail','lastModTs'
+'','routeToMarket','region','subregn1Cd','subregn2Cd','subregn3Cd','cntryCd','busGrpId','busModelCd','note','lastModById','lastModTs'
+Y,Y,Y,N,N,N,Y,Y,Y,Y,Y,Y
+'','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width'
+'lastModById'
+N
+N

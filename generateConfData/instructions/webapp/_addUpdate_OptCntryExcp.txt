@@ -1,0 +1,2 @@
+getCountries|countries|0|admin|dropdown|cd|country|cntryCd|Country|Country|elCountry|elCountry|||Y|
+||||textarea||note||Note|Note|elNote|elNote|'max256orNull'|Max length of Note is 256.|N|

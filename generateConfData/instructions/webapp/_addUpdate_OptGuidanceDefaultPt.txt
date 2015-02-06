@@ -1,0 +1,15 @@
+getRouteToMarkets|routeToMarkets|0|admin|dropdown|cd|routeToMarket|routeToMarket|Route to Market *|Route to Market|elRouteToMarket|elRouteToMarket|||N|L
+getBusinessUnits|businessUnits|0|admin|dropdown|cd|businessUnit|busUnit|Business Unit *|Business Unit|elBusinessUnit|elBusinessUnit|||N|L
+getBenchmarks|defBenchs|0|admin|dropdown|cd|benchmark|defBench|Default Benchmark|Default Benchmark|elBenchmark|elBenchmark|||Y|L
+||||text||defAdjPct||Default Adjustment %|Default Adjustment %|elDefAdjPct|elDefAdjPct|'notNull','perc'|Default Adjustment % is required.;Default Adjustment % should be percentage with maximum 2 decimal places, value should NOT larger than 100, like 10.25|Y|L
+getBenchmarks|authBenchs|0|admin|dropdown|cd|authBenchmark|authBench|Auth Benchmark|Auth Benchmark|elAuthBenchmark|elAuthBenchmark|||Y|L
+||||text||authAdjPct||Auth Adjustment %|Auth Adjustment %|elAuthAdjPct|elAuthAdjPct|'notNull','perc'|Auth Adjustment % is required.;Auth Adjustment % should be percentage with maximum 2 decimal places, value should NOT larger than 100, like 10.25|Y|L
+|||bool|checkbox||activeFlag|activeFg|Active|Active|elActiveFlag|elActiveFlag|||N|L
+getRegions|regions|0|admin|dropdown|cd|region|region|Region |Region |elRegion|elRegion|||Y|R
+getCountries|countries|0|admin|dropdown|cd|country|cntryCd|Country *|Country|elCountry|elCountry|||N|R
+getRoles|roles|0|admin|dropdown|cd|role|roleId|Role|Role|elRole|elRole|||Y|R
+getNegMarginAprvlFgs|negMarginAprvlFgs|0|admin|dropdown|cd|negMarginAprvlFg|negMarginAprvlFg|Negative Margin Approval Flag|Negative Margin Approval Flag|elNegMarginAprvlFg|elNegMarginAprvlFg|||Y|R
+|||bool|checkbox||showExpFlag|showExpFg|Show Expert|Show Expert|elShowExpFlag|elShowExpFlag|||N|R
+|||bool|checkbox||showTypeFlag|showTypFg|Show Typical|Show Typical|elShowTypeFlag|elShowTypeFlag|||N|R
+|||bool|checkbox||showFlrFlag|showFlrFg|Show Floor|Show Floor|elShowFlrFlag|elShowFlrFlag|||N|R
+||||textarea||note||Note|Note|elNote|elNote|'max256orNull'|Max length of Note is 256.|N|NOTE

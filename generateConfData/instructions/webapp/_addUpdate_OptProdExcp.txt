@@ -1,0 +1,5 @@
+getCountries|countries|0|admin|dropdown|cd|country|cntryCd|Country|Country|elCountry|elCountry|||Y|
+getProductLines|productLines|0|admin|dropdown|cd|productLine|prodLnId|Product Line|Product Line|elProductLine|elProductLine|||Y|
+getProductFamilies|productFamilies|0|admin|dropdown|cd|productFamily|prodFmlyId|Product Family *|Product Family|elProductFamily|elProductFamily|||N|
+||||text2||baseProd||Base Product *|Base Product|elBaseProd|elBaseProd|'notNull','max18','noSharp','noSpace'|Please input a valid Base Product or an asterisk.;Max length of Base Product is 18.;Base Product should NOT contain #.;Space is not allowed for Base Product.|N|
+||||textarea||note||Note|Note|elNote|elNote|'max256orNull'|Max length of Note is 256.|N|

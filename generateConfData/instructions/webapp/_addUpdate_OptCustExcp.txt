@@ -1,0 +1,5 @@
+getCountries|countries|0|admin|dropdown|cd|country|cntryCd|Country|Country|elCountry|elCountry|||Y|
+||||text||amid2||AMID2|AMID2|elAmid2|elAmid2|'notNull','max15'|AMID2 is required.;Max length of AMID2 is 15.|Y|
+||||text2||mdcpOrgId||MDCP Org ID *|MDCP Org ID|elMdcpOrgId|elMdcpOrgId|'notNull','max32','digitalOrAsterisk'|MDCP Org ID is required. It should be numeric or an asterisk.;Max length of MDCP Org ID is 32.;MDCP Org ID should be numeric or an asterisk.|N|
+||||text2||mdcpSiteId||MDCP Site ID *|MDCP Site ID|elMdcpSiteId|elMdcpSiteId|'notNull','max32','digitalOrAsterisk'|MDCP Site ID is required. It should be numeric or an asterisk.;Max length of MDCP Site ID is 32.;MDCP Site ID should be numeric or an asterisk.|N|
+||||textarea||note||Note|Note|elNote|elNote|'max256orNull'|Max length of Note is 256.|N|

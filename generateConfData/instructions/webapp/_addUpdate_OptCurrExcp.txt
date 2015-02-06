@@ -1,0 +1,3 @@
+getCountries|countries|0|admin|dropdown|cd|country|cntryCd|Country|Country|elCountry|elCountry|||Y|
+getCurrencies|currencies|0|admin|dropdown|cd|currCd|currCd|Currency|Currency|elCurrCd|elCurrCd|||Y|
+||||textarea||note||Note|Note|elNote|elNote|'max256orNull'|Max length of Note is 256.|N|

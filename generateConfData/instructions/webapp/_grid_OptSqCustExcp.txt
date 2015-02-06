@@ -1,0 +1,13 @@
+PQB Customer Level Exclusion
+
+
+'lastModTs'
+optSqCustExcp
+'','Customer','Customer Type','Note','Updated By','Updated On'
+'','custId','idType','note','lastModByEmail','lastModTs'
+'','custId','idType','note','lastModById','lastModTs'
+Y,Y,Y,Y,Y,Y
+'','pg-col-pqbcust-width','pg-col-pqbcust-width','pg-col-pqbcust-width','pg-col-pqbcust-width','pg-col-pqbcust-width'
+'lastModById'
+N
+N
