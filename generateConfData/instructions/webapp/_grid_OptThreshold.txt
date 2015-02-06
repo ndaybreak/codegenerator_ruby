@@ -1,13 +1,13 @@
-Price Method Thresholds
-'cntryCd','busUnit','unverCustPrcMthd','t1','t2','t3','holdIntlPrc','ppsHoldIntlPrc','note'
-'cntryCdForDisplay','busUnitForDisplay','unverCustPrcMthd','t1','t2','t3','holdIntlPrc','ppsHoldIntlPrc','note'
+Price Method Threshold
 't1','t2','t3','holdIntlPrc','ppsHoldIntlPrc'
+
 'amid2','lastModTs'
 optThreshold
 '','Region','Sub Region 1','Sub Region 2','Sub Region 3','Country','Business Unit','AMID2','T1 ($)','T2 ($)','T3 ($)','Hold Initial Price ($)','PPS Hold Initial Price ($)','Unverified Customer Pricing Method','Note','Updated By','Updated On'
 '','rgnCdForDisplay','subregn1CdForDisplay','subregn2CdForDisplay','subregn3CdForDisplay','cntryCdForDisplay','busUnitForDisplay','amid2ForDisplay','t1','t2','t3','holdIntlPrc','ppsHoldIntlPrc','unverCustPrcMthd','note','lastModByEmail','lastModTs'
 '','rgnCd','subregn1Cd','subregn2Cd','subregn3Cd','cntryCd','busUnit','amid2','t1','t2','t3','holdIntlPrc','ppsHoldIntlPrc','unverCustPrcMthd','note','lastModById','lastModTs'
-Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y, Y,Y,Y,Y
-'t1','t2','t3','ppsHoldIntlPrc','holdIntlPrc','lastModById'
+Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y, Y,Y,Y,Y,Y
+'','pg-col-min-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-min-width','pg-col-min-width','pg-col-min-width','pg-col-min-width','pg-col-min-width','pg-col-min-width','pg-col-min-width'
+'t1','t2','t3','holdIntlPrc','ppsHoldIntlPrc','lastModById'
 Y
 Y

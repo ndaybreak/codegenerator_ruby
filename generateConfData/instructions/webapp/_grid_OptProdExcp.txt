@@ -1,6 +1,5 @@
 Product Exception
-'cntryCd','prodLnId','prodFmlyId','note'
-'cntryCdForDisplay','prodLnIdForDisplay','prodFmlyIdForDisplay','note'
+
 
 'baseProd','lastModTs'
 optProdExcp
@@ -8,6 +7,7 @@ optProdExcp
 '','rgnCdForDisplay','subregn1CdForDisplay','subregn2CdForDisplay','subregn3CdForDisplay','cntryCdForDisplay','prodLnIdForDisplay','prodFmlyIdForDisplay','baseProd','note','lastModByEmail','lastModTs'
 '','rgnCd','subregn1Cd','subregn2Cd','subregn3Cd','cntryCd','prodLnId','prodFmlyId','baseProd','note','lastModById','lastModTs'
 Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+'','pg-col-min-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-width','pg-col-min-width','pg-col-min-width'
 'lastModById'
 N
 N

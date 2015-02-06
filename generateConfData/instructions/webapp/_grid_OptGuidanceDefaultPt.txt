@@ -1,6 +1,6 @@
 Guidance Default Points
 
-'authAdjPct','defAdjPct',
+'authAdjPct','defAdjPct'
 'lastModTs'
 optGuidanceDefaultPt
 '','Route to Market','Region','Sub Region 1','Sub Region 2','Sub Region 3','Country','Business Unit','Role','Negative Margin Approval Flag','Default Benchmark','Default Adjustment %','Auth Benchmark','Auth Adjustment %','Show Expert','Show Typical','Show Floor','Active','Note','Updated By','Updated On'
