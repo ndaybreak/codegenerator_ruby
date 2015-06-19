@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<style type="text/css">
+			#returnTop {
+				bottom: 19px;
+			}
+		</style>
+	</head>
+	<body>
+    <div class="opt-paging-container">
+        <div class="breadCrumbs_Div">
+            <ul class="breadcrumbs2">
+                <li style="margin-left: 1px;" class="last-child"><span class="carat">>&nbsp;</span>Country Exception</li>
+            </ul>
+        </div>
+        <!-- ======view by and View Results of BUTTONS========== START =====================-->
+        <div class="btn-group-box">
+            <div class="ColVis TableTools left">
+                <button type="button" class="ColVis_Button TableTools_Button ui-button ui-state-default ColVis_MasterButton dropdown-toggle" ng-click="toggle()">
+					<span>View By <i ng-class="{'icon-chevron-down':!status.icon,'icon-remove':status.icon}"></i></span>
+				</button>
+                <ul class="dropdown-menu" role="menu">
+                    <li ng-if="$index != 0" class="dropdown-li" ng-repeat="header in headers">
+                        <input ng-click="toggleHeader(header.title)" type="checkbox" ng-model="header.visible" />{{header.title}}
+                    </li>
+                </ul>
+                <div class="ColVis_collectionBackground TableTools_collectionBackground viewByBackground" ng-click="toggle()"></div>
+            </div>
+            <!-- ---------------------------------------- -->
+            <div class="ColVis TableTools pageSize right">
+           		<button type="button" style="width:190px" class="ColVis_Button ColVis_MasterButton pageSize_Button">
+					<span>View Results of <span class="selecter-selected" style="padding-left: 10px;"">{{dataPageSize}}</span><i class="icon-chevron-down"></i></span>
+				</button>
+				<ul class="dropdown-menu size-list">
+					 <li ng-repeat="size in pageSizeArray" ng-click="setPageSize(size)"  class="dropdown-li" >
+					    <span class="selecter-item" >{{size}}</span>
+                     </li>
+                </ul>
+                <div class="ColVis_collectionBackground TableTools_collectionBackground pageSizeBackground" ></div>
+            </div>
+        </div>
+        <!--  ======view by and View Results of BUTTONS========== END  ================ -->
+        <section class="container left" style="width:100%;">
+            <div class="t_body" scroll>
+                <table class="dataTable" data-anchor>
+                    <thead>
+                    	<!-- table title -->
+            			<tr class="TableHeaderRow">
+				<th class="left filterMultiColumn ui-state-default" ng-click="orderTableBy(header.value,header.cd)" ng-repeat="header in headers" ng-show="header.visible" filter-data="names($column)">
+					<div class="DataTables_sort_wrapper">
+						<input ng-if="$index == 0" type="checkbox" id="item-all" ng-click="checkAllSelection(data)" title="Check All">{{header.title}} <span ng-if="$index != 0" ng-class="{'icon-sort-up':header.value == orderHeader && orderDirection == false, 'icon-sort-down':header.value == orderHeader && orderDirection == true}" class="DataTables_sort_icon css_right icon-sort"></span>
+					</div>
+				</th>
+			</tr>
+                        <!-- table filter -->
+			    		<tr class="even">
+			    		 	<td ng-show="tdShow"></td>
+			    			<td ng-repeat="header in headers" ng-if="$index != 0" ng-show="header.visible">
+			    				<!-- ==========multiple selector=============== -->
+			    				<div ng-class="header.className" ng-if="!isInputOrDatePickerBox(header.value,true)">
+					    			<div  hpe-multiple-selector
+						                 sel-changed="change(value)"
+						                 sel-options="select[header.cd]"
+						                 sel-value="cd"
+						                 sel-name="valueForDisplay"
+						                 ng-model="selected[header.cd]">
+						           	</div>
+						           	<a class="btn btn-Primary relative-datepicker" style="margin-top: -25px;" ng-click="columnFilter()">ok</a>
+					           	</div>
+					           	<!-- ==========input box========================= -->
+					           	<div class="amid2Tooltip" style="width: 220px;" ng-if="isInputOrDatePickerBox(header.value,false)">
+									<input ng-if="header.cd !='amid2'" type="text" ng-model="selected[header.cd]" aria-controls="search_result">
+									<input ng-if="header.cd =='amid2'" type="text" ng-model="selected[header.cd]" aria-controls="search_result" data-placement="bottom" data-type="info" data-animation="am-fade-and-scale" bs-tooltip="tooltip" ng-mouseenter="tooltip.title = '<h5>Please input amid2 ID</h5>'">
+						           	<a class="btn btn-Primary relative-datepicker"  ng-click="columnFilter()">ok</a>
+						        </div>
+						        <!-- ==========date-picker box==================== -->
+					           	<div class="datapicker" style="width: 372px;" ng-if="header.value =='lastModTs'">
+			           				<div class="datapicker-box" bs-tooltip="tooltip" data-placement="bottom" >
+			           					<input type="text" class="form-control dg-datepicker" ng-model="selected[header.cd]" name="date" readonly bs-datepicker data-placement="bottom" data-type="info" data-animation="am-fade-and-scale" data-trigger="click" ng-mouseenter="tooltip.title = '<h5>Choose date to filter</h5>'" ng-enter>
+			           				</div>
+			           				<div class="ColVis_collectionBackground TableTools_collectionBackground datepicker_background"></div>
+			           				<a class="btn btn-Primary relative-datepicker" style="float: right;" ng-click="columnFilter()">ok</a>
+			           				<a class="btn btn-Critical" ng-click="clearDate()">clear</a>
+		           				</div>
+				           	</td>
+			    		</tr>
+                    </thead>
+                    <!-- table content -->
+                    <tr ng-class="{'even' : pindex%2 == 1 ,'tr-highlight' : ($last && d.addFlag )}" ng-repeat="(pindex,d) in data">
+                        <td ng-repeat="header in headers" ng-show="header.visible">
+                            <input ng-if="$index == 0" type="checkbox" id="item-{{pindex}}" ng-click="toggleSelection(pindex,d)" recordid="{{d.id}}" selection="selection"  dg-checkbox>{{d[header.value]}}
+                        </td>
+                    </tr>
+                    <tr ng-if="data.length == 0">
+                    	<td colspan="{{headers.length}}">No data available</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <div class="editable-button-box">
+        				<a class="btn btn-Primary btn-add {{btn}}" ng-click="add()"><i class="icon-plus"></i>Add New Record</a>
+			<a class="btn btn-Primary btn-delete {{btn}}" ng-click="del();"><i class="icon-trash"></i>Delete</a>
+			<a class="btn btn-Primary {{btn}}" ng-click="update()"><i class="icon-pencil icon-white"></i>Edit</a>
+        </div>
+        <!-- <a class="btn btn-Primary btn-export" ng-click="exportAsExcel()"><i class="icon-download icon-white"></i>Export</a>-->
+        <div pa-export pa-export-to-excel="exportAsExcel(flag)"></div>
+        <div ng-include src="'template/paging.html'"></div>
+    </div>
+</body>
+
+</html>
