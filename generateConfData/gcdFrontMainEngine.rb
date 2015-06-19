@@ -50,7 +50,8 @@ end
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-targetFile = File.join(__FILE__, '../output/frontMain.yaml')
+targetFile = File.join(__FILE__, '../../conf/frontMain.yaml')
+#targetFile = File.join(__FILE__, '../output/frontMain.yaml')
 if File.file?(targetFile)
   File.delete(targetFile)
 end

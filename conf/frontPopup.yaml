@@ -1,4 +1,1256 @@
 --- !ruby/object:XDetail
+entity_name: OptBuCustExcp
+screen_name: BU-Customer Exception
+one_column_flag: true
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: getCountries
+  return_value: countries
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: country
+  item_value: cntryCd
+  item_desc: Country
+  desc_for_message: Country
+  html_element_id: elCountry
+  html_element_name: elCountry
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: getBusinessUnits
+  return_value: businessUnits
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: bunit
+  item_value: busUnit
+  item_desc: Business Unit
+  desc_for_message: Business Unit
+  html_element_id: elBunit
+  html_element_name: elBunit
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 3
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text2
+  key: ''
+  item_name: mdcpOrgId
+  item_value: ''
+  item_desc: MDCP Org ID
+  desc_for_message: MDCP Org ID
+  html_element_id: elMdcpOrgId
+  html_element_name: elMdcpOrgId
+  checks:
+  - notNull
+  - max32
+  - digital
+  on_check_fail:
+  - MDCP Org ID is required.;Max length of MDCP Org ID is 32.;MDCP Org ID should be
+    numeric.
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 4
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: amid2
+  item_value: ''
+  item_desc: AMID2 *
+  desc_for_message: AMID2
+  html_element_id: elAmid2
+  html_element_name: elAmid2
+  checks:
+  - notNull
+  - max15
+  on_check_fail:
+  - Please input a valid AMID2 or an asterisk.;Max length of AMID2 is 15.
+  mandatory: false
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 5
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: 
+--- !ruby/object:XDetail
+entity_name: OptCntryExcp
+screen_name: Country Exception
+one_column_flag: true
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: getCountries
+  return_value: countries
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: country
+  item_value: cntryCd
+  item_desc: Country
+  desc_for_message: Country
+  html_element_id: elCountry
+  html_element_name: elCountry
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: 
+--- !ruby/object:XDetail
+entity_name: OptCurrExcp
+screen_name: Currency Exception
+one_column_flag: true
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: getCountries
+  return_value: countries
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: country
+  item_value: cntryCd
+  item_desc: Country
+  desc_for_message: Country
+  html_element_id: elCountry
+  html_element_name: elCountry
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: getCurrencies
+  return_value: currencies
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: currCd
+  item_value: currCd
+  item_desc: Currency
+  desc_for_message: Currency
+  html_element_id: elCurrCd
+  html_element_name: elCurrCd
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 3
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: 
+--- !ruby/object:XDetail
+entity_name: OptCustExcp
+screen_name: Customer Exception
+one_column_flag: true
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: getCountries
+  return_value: countries
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: country
+  item_value: cntryCd
+  item_desc: Country
+  desc_for_message: Country
+  html_element_id: elCountry
+  html_element_name: elCountry
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: amid2
+  item_value: ''
+  item_desc: AMID2
+  desc_for_message: AMID2
+  html_element_id: elAmid2
+  html_element_name: elAmid2
+  checks:
+  - notNull
+  - max15
+  on_check_fail:
+  - AMID2 is required.;Max length of AMID2 is 15.
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 3
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text2
+  key: ''
+  item_name: mdcpOrgId
+  item_value: ''
+  item_desc: MDCP Org ID *
+  desc_for_message: MDCP Org ID
+  html_element_id: elMdcpOrgId
+  html_element_name: elMdcpOrgId
+  checks:
+  - notNull
+  - max32
+  - digitalOrAsterisk
+  on_check_fail:
+  - MDCP Org ID is required. It should be numeric or an asterisk.;Max length of MDCP
+    Org ID is 32.;MDCP Org ID should be numeric or an asterisk.
+  mandatory: false
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 4
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text2
+  key: ''
+  item_name: mdcpSiteId
+  item_value: ''
+  item_desc: MDCP Site ID *
+  desc_for_message: MDCP Site ID
+  html_element_id: elMdcpSiteId
+  html_element_name: elMdcpSiteId
+  checks:
+  - notNull
+  - max32
+  - digitalOrAsterisk
+  on_check_fail:
+  - MDCP Site ID is required. It should be numeric or an asterisk.;Max length of MDCP
+    Site ID is 32.;MDCP Site ID should be numeric or an asterisk.
+  mandatory: false
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 5
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: 
+--- !ruby/object:XDetail
+entity_name: OptCustSegExcp
+screen_name: Customer Segment Exception
+one_column_flag: true
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: getCountries
+  return_value: countries
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: country
+  item_value: cntryCd
+  item_desc: Country
+  desc_for_message: Country
+  html_element_id: elCountry
+  html_element_name: elCountry
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: getCustSegs
+  return_value: customerSegments
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: custSeg
+  item_value: custSeg
+  item_desc: Customer Segment
+  desc_for_message: Customer Segment
+  html_element_id: elCustSeg
+  html_element_name: elCustSeg
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 3
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: 
+--- !ruby/object:XDetail
+entity_name: OptGuidanceDefaultPt
+screen_name: Guidance Default Points
+one_column_flag: false
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: getRouteToMarkets
+  return_value: routeToMarkets
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: routeToMarket
+  item_value: routeToMarket
+  item_desc: Route to Market *
+  desc_for_message: Route to Market
+  html_element_id: elRouteToMarket
+  html_element_name: elRouteToMarket
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: getRegions
+  return_value: regions
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: region
+  item_value: region
+  item_desc: 'Region '
+  desc_for_message: 'Region '
+  html_element_id: elRegion
+  html_element_name: elRegion
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 3
+  service_name: getBusinessUnits
+  return_value: businessUnits
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: businessUnit
+  item_value: busUnit
+  item_desc: Business Unit *
+  desc_for_message: Business Unit
+  html_element_id: elBusinessUnit
+  html_element_name: elBusinessUnit
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 4
+  service_name: getCountries
+  return_value: countries
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: country
+  item_value: cntryCd
+  item_desc: Country *
+  desc_for_message: Country
+  html_element_id: elCountry
+  html_element_name: elCountry
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 5
+  service_name: getBenchmarks
+  return_value: defBenchs
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: benchmark
+  item_value: defBench
+  item_desc: Default Benchmark
+  desc_for_message: Default Benchmark
+  html_element_id: elBenchmark
+  html_element_name: elBenchmark
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 6
+  service_name: getRoles
+  return_value: roles
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: role
+  item_value: roleId
+  item_desc: Role
+  desc_for_message: Role
+  html_element_id: elRole
+  html_element_name: elRole
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 7
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: defAdjPct
+  item_value: ''
+  item_desc: Default Adjustment %
+  desc_for_message: Default Adjustment %
+  html_element_id: elDefAdjPct
+  html_element_name: elDefAdjPct
+  checks:
+  - notNull
+  - perc
+  on_check_fail:
+  - Default Adjustment % is required.;Default Adjustment % should be percentage with
+    maximum 2 decimal places
+  - " value should NOT larger than 100"
+  - " like 10.25"
+  mandatory: true
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 8
+  service_name: getNegMarginAprvlFgs
+  return_value: negMarginAprvlFgs
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: negMarginAprvlFg
+  item_value: negMarginAprvlFg
+  item_desc: Negative Margin Approval Flag
+  desc_for_message: Negative Margin Approval Flag
+  html_element_id: elNegMarginAprvlFg
+  html_element_name: elNegMarginAprvlFg
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 9
+  service_name: getBenchmarks
+  return_value: authBenchs
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: authBenchmark
+  item_value: authBench
+  item_desc: Auth Benchmark
+  desc_for_message: Auth Benchmark
+  html_element_id: elAuthBenchmark
+  html_element_name: elAuthBenchmark
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 10
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: bool
+  control_type: checkbox
+  key: ''
+  item_name: showExpFlag
+  item_value: showExpFg
+  item_desc: Show Expert
+  desc_for_message: Show Expert
+  html_element_id: elShowExpFlag
+  html_element_name: elShowExpFlag
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 11
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: authAdjPct
+  item_value: ''
+  item_desc: Auth Adjustment %
+  desc_for_message: Auth Adjustment %
+  html_element_id: elAuthAdjPct
+  html_element_name: elAuthAdjPct
+  checks:
+  - notNull
+  - perc
+  on_check_fail:
+  - Auth Adjustment % is required.;Auth Adjustment % should be percentage with maximum
+    2 decimal places
+  - " value should NOT larger than 100"
+  - " like 10.25"
+  mandatory: true
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 12
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: bool
+  control_type: checkbox
+  key: ''
+  item_name: showTypeFlag
+  item_value: showTypFg
+  item_desc: Show Typical
+  desc_for_message: Show Typical
+  html_element_id: elShowTypeFlag
+  html_element_name: elShowTypeFlag
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 13
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: bool
+  control_type: checkbox
+  key: ''
+  item_name: activeFlag
+  item_value: activeFg
+  item_desc: Active
+  desc_for_message: Active
+  html_element_id: elActiveFlag
+  html_element_name: elActiveFlag
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 14
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: bool
+  control_type: checkbox
+  key: ''
+  item_name: showFlrFlag
+  item_value: showFlrFg
+  item_desc: Show Floor
+  desc_for_message: Show Floor
+  html_element_id: elShowFlrFlag
+  html_element_name: elShowFlrFlag
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 15
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: NOTE
+--- !ruby/object:XDetail
+entity_name: OptNonDiscProdExcp
+screen_name: Non-discountable Product Exception
+one_column_flag: true
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: getCountries
+  return_value: countries
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: country
+  item_value: cntryCd
+  item_desc: Country *
+  desc_for_message: Country *
+  html_element_id: elCountry
+  html_element_name: elCountry
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text2
+  key: ''
+  item_name: baseProd
+  item_value: ''
+  item_desc: Base Product
+  desc_for_message: Base Product
+  html_element_id: elBaseProd
+  html_element_name: elBaseProd
+  checks:
+  - notNull
+  - max18
+  - noSharp
+  - noSpace
+  on_check_fail:
+  - 'Base Product is required.;Max length of Base Product is 18.;Base Product could
+    NOT contain #.;Space is not allowed for Base Product.'
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 3
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: 
+--- !ruby/object:XDetail
+entity_name: OptProdExcp
+screen_name: Product Exception
+one_column_flag: true
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: getCountries
+  return_value: countries
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: country
+  item_value: cntryCd
+  item_desc: Country
+  desc_for_message: Country
+  html_element_id: elCountry
+  html_element_name: elCountry
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: getProductLines
+  return_value: productLines
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: productLine
+  item_value: prodLnId
+  item_desc: Product Line
+  desc_for_message: Product Line
+  html_element_id: elProductLine
+  html_element_name: elProductLine
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 3
+  service_name: getProductFamilies
+  return_value: productFamilies
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: productFamily
+  item_value: prodFmlyId
+  item_desc: Product Family *
+  desc_for_message: Product Family
+  html_element_id: elProductFamily
+  html_element_name: elProductFamily
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 4
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text2
+  key: ''
+  item_name: baseProd
+  item_value: ''
+  item_desc: Base Product *
+  desc_for_message: Base Product
+  html_element_id: elBaseProd
+  html_element_name: elBaseProd
+  checks:
+  - notNull
+  - max18
+  - noSharp
+  - noSpace
+  on_check_fail:
+  - 'Please input a valid Base Product or an asterisk.;Max length of Base Product
+    is 18.;Base Product should NOT contain #.;Space is not allowed for Base Product.'
+  mandatory: false
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 5
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: 
+--- !ruby/object:XDetail
+entity_name: OptThreshold
+screen_name: Price Method Threshold
+one_column_flag: false
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: getCountries
+  return_value: countries
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: country
+  item_value: cntryCd
+  item_desc: 'Country '
+  desc_for_message: 'Country '
+  html_element_id: elCountry
+  html_element_name: elCountry
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: t1
+  item_value: ''
+  item_desc: T1 ($)
+  desc_for_message: T1 ($)
+  html_element_id: elT1
+  html_element_name: elT1
+  checks:
+  - notNull
+  - curr
+  - max18
+  on_check_fail:
+  - T1 ($) is required.;T1 ($) should be positive numeric
+  - " with maximum 2 decimal places"
+  - " like 10.25;Max length of T1 ($) is 18."
+  mandatory: true
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 3
+  service_name: getBusinessUnits
+  return_value: businessUnits
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: businessUnit
+  item_value: busUnit
+  item_desc: Business Unit
+  desc_for_message: Business Unit
+  html_element_id: elBusinessUnit
+  html_element_name: elBusinessUnit
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 4
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: t2
+  item_value: ''
+  item_desc: T2 ($)
+  desc_for_message: T2 ($)
+  html_element_id: elT2
+  html_element_name: elT2
+  checks:
+  - notNull
+  - curr
+  - max18
+  on_check_fail:
+  - T2 ($) is required.;T2 ($) should be positive numeric
+  - " with maximum 2 decimal places"
+  - " like 10.25;Max length of T2 ($) is 18."
+  mandatory: true
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 5
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: amid2
+  item_value: ''
+  item_desc: AMID2 *
+  desc_for_message: AMID2
+  html_element_id: elAmid2
+  html_element_name: elAmid2
+  checks:
+  - notNull
+  - max15
+  on_check_fail:
+  - Please input a valid AMID2 or an asterisk.;Max length of AMID2 is 15.
+  mandatory: false
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 6
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: t3
+  item_value: ''
+  item_desc: T3 ($)
+  desc_for_message: T3 ($)
+  html_element_id: elT3
+  html_element_name: elT3
+  checks:
+  - notNull
+  - curr
+  - max18
+  on_check_fail:
+  - T3 ($) is required.;T3 ($) should be positive numeric
+  - " with maximum 2 decimal places"
+  - " like 10.25;Max length of T3 ($) is 18."
+  mandatory: true
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 7
+  service_name: getUnverCustPrcMthds
+  return_value: unverCustPrcMthds
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: unverCustPrcMthd
+  item_value: unverCustPrcMthd
+  item_desc: Unverified Customer Pricing Method
+  desc_for_message: Unverified Customer Pricing Method
+  html_element_id: elUnverCustPrcMthd
+  html_element_name: elUnverCustPrcMthd
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 8
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: holdIntlPrc
+  item_value: ''
+  item_desc: Hold Initial Price ($)
+  desc_for_message: Hold Initial Price ($)
+  html_element_id: elHoldIntlPrc
+  html_element_name: elHoldIntlPrc
+  checks:
+  - nullOrMax18_2Curr
+  on_check_fail:
+  - Hold Initial Price ($) should be empty or positive numeric with maximum 18 integer
+    and 2 decimal places
+  - " like 10.25."
+  mandatory: false
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 9
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: placeholder
+  key: ''
+  item_name: ''
+  item_value: ''
+  item_desc: ''
+  desc_for_message: ''
+  html_element_id: ''
+  html_element_name: ''
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: L
+- !ruby/object:XDetailItem
+  internal_id: 10
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: ppsHoldIntlPrc
+  item_value: ''
+  item_desc: PPS Hold Initial Price ($)
+  desc_for_message: PPS Hold Initial Price ($)
+  html_element_id: elPpsHoldIntlPrc
+  html_element_name: elPpsHoldIntlPrc
+  checks:
+  - nullOrMax18_2Curr
+  on_check_fail:
+  - PPS Hold Initial Price ($) should be empty or positive numeric with maximum 18
+    integer and 2 decimal places
+  - " like 10.25."
+  mandatory: false
+  side: R
+- !ruby/object:XDetailItem
+  internal_id: 11
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: NOTE
+--- !ruby/object:XDetail
+entity_name: OptPromo
+screen_name: Promo pricing
+one_column_flag: true
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: getRouteToMarkets
+  return_value: routeToMarkets
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: routeToMarket
+  item_value: routeToMarket
+  item_desc: Route to Market
+  desc_for_message: Route to Market
+  html_element_id: elRouteToMarket
+  html_element_name: elRouteToMarket
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: getRegions
+  return_value: regions
+  default_index: ''
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: region
+  item_value: region
+  item_desc: 'Region '
+  desc_for_message: Region
+  html_element_id: elRegion
+  html_element_name: elRegion
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 3
+  service_name: getCountries
+  return_value: countries
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: country
+  item_value: cntryCd
+  item_desc: Country *
+  desc_for_message: 'Country '
+  html_element_id: elCountry
+  html_element_name: elCountry
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 4
+  service_name: getBusinessGroups
+  return_value: businessGroups
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: businessGroup
+  item_value: busGrpId
+  item_desc: Business Group
+  desc_for_message: Business Group
+  html_element_id: elBusinessGroup
+  html_element_name: elBusinessGroup
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 5
+  service_name: getbusinessModels
+  return_value: businessModels
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: businessModel
+  item_value: busModelCd
+  item_desc: Business Model *
+  desc_for_message: Business Model
+  html_element_id: elBusinessModel
+  html_element_name: elBusinessModel
+  checks: []
+  on_check_fail: []
+  mandatory: false
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 6
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: 
+--- !ruby/object:XDetail
+entity_name: OptSqCustExcp
+screen_name: PQB Customer Level Exclusion
+one_column_flag: true
+items:
+- !ruby/object:XDetailItem
+  internal_id: 1
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: text
+  key: ''
+  item_name: custId
+  item_value: ''
+  item_desc: Customer
+  desc_for_message: Customer
+  html_element_id: elCustomerId
+  html_element_name: elCustomerId
+  checks:
+  - notNull
+  - max32
+  on_check_fail:
+  - Customer ID is required.;Max length of Customer ID is 32.
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 2
+  service_name: getCustormerIdTypes
+  return_value: idTypes
+  default_index: '0'
+  data_source: admin
+  control_type: dropdown
+  key: cd
+  item_name: idType
+  item_value: idType
+  item_desc: Customer Type
+  desc_for_message: Customer Type
+  html_element_id: elIdType
+  html_element_name: elIdType
+  checks: []
+  on_check_fail: []
+  mandatory: true
+  side: 
+- !ruby/object:XDetailItem
+  internal_id: 3
+  service_name: ''
+  return_value: ''
+  default_index: ''
+  data_source: ''
+  control_type: textarea
+  key: ''
+  item_name: note
+  item_value: ''
+  item_desc: Note
+  desc_for_message: Note
+  html_element_id: elNote
+  html_element_name: elNote
+  checks:
+  - max256orNull
+  on_check_fail:
+  - Max length of Note is 256.
+  mandatory: false
+  side: 
+--- !ruby/object:XDetail
 entity_name: OptSqCtryBgExcp
 screen_name: PQB Country/BG Exclusion
 one_column_flag: true
@@ -13,8 +1265,8 @@ items:
   key: cd
   item_name: country
   item_value: cntryCd
-  item_desc: ! 'Country '
-  desc_for_message: ! 'Country '
+  item_desc: 'Country '
+  desc_for_message: 'Country '
   html_element_id: elCountry
   html_element_name: elCountry
   checks: []

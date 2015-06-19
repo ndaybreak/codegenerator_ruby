@@ -1,0 +1,12 @@
+User Management
+optUserList
+optUserGridField
+id
+optUser
+E-mail,First Name,Last Name,Role,Status,Last Login Date,Updated By,Updated On
+email,firstName,lastName,role.roleName,statusFgForDisplay,lastLoginTs,lastModByEmail,lastModTs
+100,100,100,100,100,100,100,100
+1,2,3,4,5,6,7,8
+0
+N
+N

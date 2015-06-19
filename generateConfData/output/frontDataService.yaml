@@ -1,6 +1,22 @@
 --- !ruby/object:XDataSerive
 entity_list:
 - !ruby/object:XSeriveItem
+  entity_name: OptSqCustExcp
+  read_all_service: getAllOptSqCustExcp
+  save_service: saveOptSqCustExcp
+  update_service: updateOptSqCustExcp
+  delete_service: deleteOptSqCustExcp
+  mass_delete_service: massDeleteOptSqCustExcp
+  read_all_url: URL_GET_OPTSQCUSTEXCP
+  save_url: URL_SAVE_OPTSQCUSTEXCP
+  update_url: URL_UPDATE_OPTSQCUSTEXCP
+  delete_url: URL_DELETE_OPTSQCUSTEXCP
+  no_filter_url: URL_OPTSQCUSTEXCP_DATA
+  filter_url: URL_OPTSQCUSTEXCP_FILTERED_DATA
+  select_url: URL_OPTSQCUSTEXCP_SELECT_DATA
+  client_variable: promiseOptSqCustExcp
+  client_variable_list: optSqCustExcpList
+- !ruby/object:XSeriveItem
   entity_name: OptSqCtryBgExcp
   read_all_service: getAllOptSqCtryBgExcp
   save_service: saveOptSqCtryBgExcp

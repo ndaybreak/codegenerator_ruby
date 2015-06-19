@@ -1,0 +1,6 @@
+getTenantCodes|tenantCodes|0|admin|dropdown|cd|tenantCode|tenantCode|Tenant Code|Tenant Code|elTenantCode|elTenantCode|||Y|
+||||text||email||Email|Email|elEmail|elEmail|'notNull','email'|Email is required.;Email format is like john.doe@hp.com|Y|
+||||text||firstName||First Name|First Name|elFirstName|elFirstName|'notNull'|First Name is required.|Y|
+||||text||lastName||Last Name|Last Name|elLastName|elLastName|'notNull'|Last Name is required.|Y|
+getRoles|roles|0|admin|dropdown|cd|role|role|Role|Role|elRole|elRole|||Y|
+|||bool|checkbox||statusFlag|statusFg|Active|Active|elStatusFlag|elStatusFlag|||N|

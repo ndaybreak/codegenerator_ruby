@@ -23,7 +23,7 @@ class XSeriveItem
     @delete_url
     @no_filter_url
     @filter_url
-	@select_url
+	  @select_url
     @client_variable
     @client_variable_list
 	
@@ -42,7 +42,7 @@ def render_frontDataService
   File.open( File.join(__FILE__, '../conf/frontDataService.yaml') ) { |f|
     YAML.load_documents( f ) { |d|
 		$xc = d
-		input = File.read(File.join(__FILE__, '../template/frontDataService.js'))
+		input = File.read(File.join(__FILE__, '../template/frontDataService_shortcut.js'))
 		results = ERB.new(input, nil, '-').result
 		output = File.join(__FILE__, '../output/js/DataService.js')
 		File.open(output, 'w'){|file| file.write(results)}

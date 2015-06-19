@@ -1,22 +1,22 @@
-function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $document, $window, AdminService, loading, confirm, logger, formatData)
+function OptCurrExcpEditDataGridCtrlPg($scope, $filter, $modal, $document, $window, AdminService, loading, confirm, logger, formatData)
 {
-	var pgOptions = {moduleName : '<%= $xc.action %>'};
+	var pgOptions = {moduleName : 'optCurrExcp'};
    	//save filter value after click OK button
 	var oldFilterObj = {};
 	//will update select options based on attrList(keys of $scope.select)
-	var attrList = <%= $xc.getAttrList%>;
-	var forDisplayList = <%= $xc.getValueList%>;
+	var attrList = ["rgnCd", "subregn1Cd", "subregn2Cd", "subregn3Cd", "cntryCd", "currCd", "note", "lastModById", "lastModTs"];
+	var forDisplayList = ["rgnCdForDisplay", "subregn1CdForDisplay", "subregn2CdForDisplay", "subregn3CdForDisplay", "cntryCdForDisplay", "currCd", "note", "lastModByEmail", "lastModTs"];
 	//finished ajax call
 	var count = 0;
 	//note: cd and value of dollerFields,percentFields must be same.
-	$scope.dollerFields = <%= $xc.getDollerFields %>;
-	$scope.percentFields = <%= $xc.getPercentFields %>;
+	$scope.dollerFields = [];
+	$scope.percentFields = [];
 	$scope.numStrCDFields = [];
 	//the attribute list for input and date picker boxs.
-	var inputAndDatePickerBoxs = <%= $xc.getInputDateFields %>;
-	// handle Broadcast from shareService when <%= $xc.action %>List is update in other controller
+	var inputAndDatePickerBoxs = ["lastModTs"];
+	// handle Broadcast from shareService when optCurrExcpList is update in other controller
 	$scope.$on('handleGridDataBroadcast', function(scope,action,result) {
-		if(action == '<%= $xc.action %>')
+		if(action == 'optCurrExcp')
 		{
 			// reset guidanceList,and then directive will witch this value
             updateSelectOptions($scope,attrList,forDisplayList,result.lineData);
@@ -42,20 +42,19 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
           return;
         }
 		// Track user action
-		_waq.push(['Click', '<%= $xc.entity_name %>ManagementAdd']);
+		_waq.push(['Click', 'OptCurrExcpManagementAdd']);
 		logger.info("Executing add()");
 		$modal
-		.open({templateUrl: "html/<%= $xc.entity_name %>Edit.html", controller: <%= $xc.entity_name %>EditCtrl,
-							<%= $xc.js_column_style -%>
-							keyboard: false,
-							resolve: {selected<%= $xc.entity_name %>: null} });
+		.open({templateUrl: "html/OptCurrExcpEdit.html", controller: OptCurrExcpEditCtrl,
+							windowClass : 'oneCol',							keyboard: false,
+							resolve: {selectedOptCurrExcp: null} });
 	}
 	$scope.update = function () {
         if($scope.btn){
           return;
         }
 		// Track user action
-		_waq.push(['Click', '<%= $xc.entity_name %>ManagementUpdate']);
+		_waq.push(['Click', 'OptCurrExcpManagementUpdate']);
 		// get selected from scope
 		var selectedItem = $scope.selection;
 		if(selectedItem.length != 1)
@@ -64,10 +63,9 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
 			return ;
 		}
 		var guidCopy = angular.copy(selectedItem[0]);
-		$modal.open({templateUrl: "html/<%= $xc.entity_name %>Edit.html", controller: <%= $xc.entity_name %>EditCtrl,
-								<%= $xc.js_use_two_col -%>
-								keyboard: false,
-								resolve: {selected<%= $xc.entity_name %>: function() {return guidCopy;} } });
+		$modal.open({templateUrl: "html/OptCurrExcpEdit.html", controller: OptCurrExcpEditCtrl,
+																keyboard: false,
+								resolve: {selectedOptCurrExcp: function() {return guidCopy;} } });
 	};
 	
 	$scope.del = function(){
@@ -75,7 +73,7 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
           return;
         }
 		// Track user action
-		_waq.push(['Click', '<%= $xc.entity_name %>ManagementDelete']);
+		_waq.push(['Click', 'OptCurrExcpManagementDelete']);
 		// get selected from scope
 		var selectedItem = $scope.selection;
 		if (selectedItem.length < 1) {
@@ -88,8 +86,8 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
 				itemToDelete : selectedItem,
 				dollerFields : $scope.dollerFields
 			};
-			AdminService.delete<%= $xc.entity_name %>(options,function(result){
-				// update <%= $xc.action %>List when delete completed
+			AdminService.deleteOptCurrExcp(options,function(result){
+				// update optCurrExcpList when delete completed
 				result.totalRecordAmount = result.totalRecordAmount -selectedItem.length;
 				//delete all data in current page, if true
 				if(result.totalRecordAmount > 0 && result.lineData.length == 0){
@@ -99,7 +97,7 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
 						filterObj : $scope.getFilterObj(),
 						dollerFields : $scope.dollerFields
 					};
-					AdminService.get<%= $xc.entity_name %>FilteredData(para,function(result) {
+					AdminService.getOptCurrExcpFilteredData(para,function(result) {
 						$scope.currentPage = 1;
 						pgOptions.data = result.lineData;
 						pgOptions.totalSize = result.totalRecordAmount;
@@ -138,8 +136,8 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
 	//exportExcel with filtered data
 	$scope.exportAsExcel = function(partFlag) {
 		//var setting = $scope.dataTable.fnSettings();
-		//gridDataToJson(setting, '<%= $xc.entity_title %>');
-		//for <%= $xc.entity_name %> page only <%= $xc.bigint_colms %> is bigint
+		//gridDataToJson(setting, 'Currency Exception');
+		//for OptCurrExcp page only ["lastModById"] is bigint
 		var limitNum = AdminService.getLimitNumForExport(); 
 		//if data size is more than max number,will not export data.
 		if($scope.size() >= parseInt(limitNum)){
@@ -149,8 +147,8 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
 			return;
 		}
 		loading.open();
-		var columns = <%= $xc.bigint_colms %>;
-		var entityName = '<%= $xc.entity_name %>';
+		var columns = ["lastModById"];
+		var entityName = 'OptCurrExcp';
 		result = formatObjForExport($scope.headers,$scope.obj,columns,entityName,partFlag);
         $.fileDownload(AdminService.getExportToExcelByFilterCriteriaUrl(), {
             httpMethod: "post",
@@ -307,7 +305,7 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
 			dollerFields : $scope.dollerFields,
 			percentFields : $scope.percentFields
 		};
-		AdminService.get<%= $xc.entity_name %>FilteredData(para,function(result) {
+		AdminService.getOptCurrExcpFilteredData(para,function(result) {
 			$scope.currentPage = 1;
 			pgOptions.data = result.lineData;
 			pgOptions.totalSize = result.totalRecordAmount;
@@ -318,13 +316,20 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
 	};
 	
 	//get table data list from server  with paging
-	AdminService.get<%= $xc.entity_name %>Data(para,function(result) {
+	AdminService.getOptCurrExcpData(para,function(result) {
 		AdminService.getStaticData($scope.setAuth,plusOne);
 		$scope.headers = [
-		<% $xc.colms_info.each do |colm| -%>
-			{title: '<%= colm[0] %>',value: '<%= colm[1] %>',cd: '<%= colm[2] %>',visible: <%= colm[3] %>,className: '<%= colm[4] %>'},
-		<% end -%>
-    	];
+					{title: '',value: '',cd: '',visible: true,className: ''},
+					{title: 'Region',value: 'rgnCdForDisplay',cd: 'rgnCd',visible: true,className: 'pg-col-width'},
+					{title: 'Sub Region 1',value: 'subregn1CdForDisplay',cd: 'subregn1Cd',visible: true,className: 'pg-col-width'},
+					{title: 'Sub Region 2',value: 'subregn2CdForDisplay',cd: 'subregn2Cd',visible: true,className: 'pg-col-width'},
+					{title: 'Sub Region 3',value: 'subregn3CdForDisplay',cd: 'subregn3Cd',visible: true,className: 'pg-col-width'},
+					{title: 'Country',value: 'cntryCdForDisplay',cd: 'cntryCd',visible: true,className: 'pg-col-width'},
+					{title: 'Currency',value: 'currCd',cd: 'currCd',visible: true,className: 'pg-col-width'},
+					{title: 'Note',value: 'note',cd: 'note',visible: true,className: 'pg-col-width'},
+					{title: 'Updated By',value: 'lastModByEmail',cd: 'lastModById',visible: true,className: 'pg-col-width'},
+					{title: 'Updated On',value: 'lastModTs',cd: 'lastModTs',visible: true,className: 'pg-col-width'},
+		    	];
 		$scope.currentPage = 1;
 		pgOptions.data = result.lineData;
 		pgOptions.totalSize = result.totalRecordAmount;
@@ -352,7 +357,7 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
 		$scope.select = {};
 		$scope.selected = {};
 		$scope.originalSelected = {};
-		AdminService.get<%= $xc.entity_name %>SelectData(function(result) {
+		AdminService.getOptCurrExcpSelectData(function(result) {
 			angular.forEach($scope.dollerFields,function(key){
 				result[key] = formatData.toDollerData(result[key],['cd','valueForDisplay']);
 			});
@@ -464,7 +469,7 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
 				dollerFields : $scope.dollerFields,
 				percentFields : $scope.percentFields
 			};
-			AdminService.get<%= $xc.entity_name %>FilteredData(para, function(result) {
+			AdminService.getOptCurrExcpFilteredData(para, function(result) {
 				$scope.currentPage = 1;
 				pgOptions.data = result.lineData;
 				pgOptions.totalSize = result.totalRecordAmount;
@@ -482,7 +487,7 @@ function <%= $xc.entity_name %>EditDataGridCtrlPg($scope, $filter, $modal, $docu
 				dollerFields : $scope.dollerFields,
 				percentFields : $scope.percentFields
 			};
-			AdminService.get<%= $xc.entity_name %>Data(para,function(result) {
+			AdminService.getOptCurrExcpData(para,function(result) {
 				$scope.currentPage = 1;
 				pgOptions.data = result.lineData;
 				pgOptions.totalSize = result.totalRecordAmount;

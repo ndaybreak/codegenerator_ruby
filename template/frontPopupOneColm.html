@@ -27,12 +27,11 @@
 					</td>
 					<td style="vertical-align: top;">
 						<div class="col-lg-7">
-						<% if item.checks.size > 0 %>
-							<input class="form-control add_form_text_input" type="text" ng-model="item.<%= item.item_name %>" ng-change="<%= item.html_element_id %>Check()" ng-blur="<%= item.html_element_id %>Check('blur')" ng-focus="<%= item.html_element_id %>Focus()" 
-							<% if item.control_type == 'text2' %> pa-input="trimAndToUpperCase" <% end %>/>
-						<% else %>
+						<%- if item.checks.size > 0 -%>
+							<input class="form-control add_form_text_input" type="text" ng-model="item.<%= item.item_name %>" ng-change="<%= item.html_element_id %>Check()" ng-blur="<%= item.html_element_id %>Check('blur')" ng-focus="<%= item.html_element_id %>Focus()" <%- if item.control_type == 'text2' %> pa-input="trimAndToUpperCase" <% end %>/>
+						<%- else -%>
 							<input class="form-control add_form_text_input" type="text" ng-model="item.<%= item.item_name %>" <% if item.control_type == 'text2' %>pa-input="trimAndToUpperCase" <% end %>/>
-						<% end %>
+						<%- end -%>
 						</div>
 					</td>
 				</tr>
@@ -57,11 +56,11 @@
 					</td>
 					<td style="vertical-align: top;">
 						<div class="col-lg-7">
-						<% if item.checks.size > 0 %>
+						<%- if item.checks.size > 0 -%>
 							<textarea class="ui-textarea" cols="20" rows="3" ng-model="item.<%= item.item_name %>" ng-change="<%= item.html_element_id %>Check()" ng-blur="<%= item.html_element_id %>Check()" />
-						<% else %>
+						<%- else -%>
 							<textarea class="ui-textarea" cols="20" rows="3" ng-model="item.<%= item.item_name %>" />
-						<% end %>
+						<%- end -%>
 						</div>
 					</td>
 				</tr>

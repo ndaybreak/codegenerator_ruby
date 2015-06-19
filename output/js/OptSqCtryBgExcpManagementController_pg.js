@@ -113,6 +113,7 @@ function OptSqCtryBgExcpEditDataGridCtrlPg($scope, $filter, $modal, $document, $
 					$scope.selection = [];
 					loading.close();
 				}
+				$document.find("input[id='item-all']").prop("checked",false);
 			});
 		});
 	}; 
@@ -241,7 +242,7 @@ function OptSqCtryBgExcpEditDataGridCtrlPg($scope, $filter, $modal, $document, $
     $scope.selection = [];
 	$scope.checkAllSelection = function(item) {
 		$document.find(".dataTable").trigger('click');
-    	if($scope.selection.length < $scope.dataPageSize && $scope.selection.length ==0){
+		if($scope.data && $scope.selection.length < $scope.data.length){
     		$scope.selection = angular.copy(item);
     		$document.find("input[id*='item']").prop("checked",true);
     	}else{
@@ -265,7 +266,7 @@ function OptSqCtryBgExcpEditDataGridCtrlPg($scope, $filter, $modal, $document, $
     	  // is newly selected
     	  else {
     		  $scope.selection.push(item);
-    		  if($scope.selection.length == $scope.dataPageSize){
+    		  if($scope.selection.length == $scope.data.length){
     			  $document.find("input[id='item-all']").prop("checked",true);
     		  }
     	  }
@@ -506,4 +507,9 @@ function OptSqCtryBgExcpEditDataGridCtrlPg($scope, $filter, $modal, $document, $
 			loading.close();
 		}
 	}
+	$scope.$watch('selection',function(newObj,oldObj){
+		if(newObj.length == 0){
+			$document.find("input[id='item-all']").prop("checked",false);
+		}
+	});
 }

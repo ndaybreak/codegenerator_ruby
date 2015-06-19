@@ -1,11 +1,11 @@
 getCountries|countries|0|admin|dropdown|cd|country|cntryCd|Country |Country |elCountry|elCountry|||Y|L
-getBusinessUnits|businessUnits|0|admin|dropdown|cd|businessUnit|busUnit|Business Unit|Business Unit|elBusinessUnit|elBusinessUnit|||Y|L
-||||text||amid2||AMID2 *|AMID2|elAmid2|elAmid2|'notNull','max15'|Please input a valid AMID2 or an asterisk.;Max length of AMID2 is 15.|N|L
-getUnverCustPrcMthds|unverCustPrcMthds|0|admin|dropdown|cd|unverCustPrcMthd|unverCustPrcMthd|Unverified Customer Pricing Method|Unverified Customer Pricing Method|elUnverCustPrcMthd|elUnverCustPrcMthd|||Y|L
-||||placeholder|||||||||||L
 ||||text||t1||T1 ($)|T1 ($)|elT1|elT1|'notNull','curr','max18'|T1 ($) is required.;T1 ($) should be positive numeric, with maximum 2 decimal places, like 10.25;Max length of T1 ($) is 18.|Y|R
+getBusinessUnits|businessUnits|0|admin|dropdown|cd|businessUnit|busUnit|Business Unit|Business Unit|elBusinessUnit|elBusinessUnit|||Y|L
 ||||text||t2||T2 ($)|T2 ($)|elT2|elT2|'notNull','curr','max18'|T2 ($) is required.;T2 ($) should be positive numeric, with maximum 2 decimal places, like 10.25;Max length of T2 ($) is 18.|Y|R
+||||text||amid2||AMID2 *|AMID2|elAmid2|elAmid2|'notNull','max15'|Please input a valid AMID2 or an asterisk.;Max length of AMID2 is 15.|N|L
 ||||text||t3||T3 ($)|T3 ($)|elT3|elT3|'notNull','curr','max18'|T3 ($) is required.;T3 ($) should be positive numeric, with maximum 2 decimal places, like 10.25;Max length of T3 ($) is 18.|Y|R
+getUnverCustPrcMthds|unverCustPrcMthds|0|admin|dropdown|cd|unverCustPrcMthd|unverCustPrcMthd|Unverified Customer Pricing Method|Unverified Customer Pricing Method|elUnverCustPrcMthd|elUnverCustPrcMthd|||Y|L
 ||||text||holdIntlPrc||Hold Initial Price ($)|Hold Initial Price ($)|elHoldIntlPrc|elHoldIntlPrc|'nullOrMax18_2Curr'|Hold Initial Price ($) should be empty or positive numeric with maximum 18 integer and 2 decimal places, like 10.25.|N|R
+||||placeholder|||||||||||L
 ||||text||ppsHoldIntlPrc||PPS Hold Initial Price ($)|PPS Hold Initial Price ($)|elPpsHoldIntlPrc|elPpsHoldIntlPrc|'nullOrMax18_2Curr'|PPS Hold Initial Price ($) should be empty or positive numeric with maximum 18 integer and 2 decimal places, like 10.25.|N|R
 ||||textarea||note||Note|Note|elNote|elNote|'max256orNull'|Max length of Note is 256.|N|NOTE

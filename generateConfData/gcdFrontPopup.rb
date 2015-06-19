@@ -27,6 +27,7 @@ end
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#targetFile = File.join(__FILE__, '../../conf/frontPopup.yaml')
 targetFile = File.join(__FILE__, '../output/frontPopup.yaml')
 if File.file?(targetFile)
   File.delete(targetFile)
@@ -39,7 +40,8 @@ for entityLine in entityInfoLines
   tempXDetail = XDetail.new()
   tempXDetail.entity_name = entityInfo[0]
   tempXDetail.screen_name = entityInfo[1]
-  if tempXDetail.entity_name == 'OptThreshold'
+#  need auto add entity_name by custmer 
+  if tempXDetail.entity_name == 'OptThreshold' || tempXDetail.entity_name == 'OptGuidanceDefaultPt'
     tempXDetail.one_column_flag = false
   else
     tempXDetail.one_column_flag = true

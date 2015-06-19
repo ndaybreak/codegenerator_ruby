@@ -7,15 +7,15 @@
 #OptSysParam,System Parameters
 #OptUser,User
 #OptUserTest,User Test
-OptBuCustExcp,BU-Customer Exception
+#OptBuCustExcp,BU-Customer Exception
 OptCntryExcp,Country Exception
-OptCurrExcp,Currency Exception
-OptCustExcp,Customer Exception
-OptCustSegExcp,Customer Segment Exception
-OptGuidanceDefaultPt,Guidance Default Points
-OptNonDiscProdExcp,Non-discountable Product Exception
-OptProdExcp,Product Exception
-OptThreshold,Price Method Threshold
-OptPromo,Promo pricing
-OptSqCustExcp,PQB Customer Level Exclusion
-OptSqCtryBgExcp,PQB Country/BG Exclusion
+#OptCurrExcp,Currency Exception
+#OptCustExcp,Customer Exception
+#OptCustSegExcp,Customer Segment Exception
+#OptGuidanceDefaultPt,Guidance Default Points
+#OptNonDiscProdExcp,Non-discountable Product Exception
+#OptProdExcp,Product Exception
+#OptThreshold,Price Method Threshold
+#OptPromo,Promo pricing
+#OptSqCustExcp,PQB Customer Level Exclusion
+#OptSqCtryBgExcp,PQB Country/BG Exclusion

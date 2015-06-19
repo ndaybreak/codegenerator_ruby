@@ -1,6 +1,6 @@
 --- !ruby/object:XDetail
-entity_name: OptSqCtryBgExcp
-screen_name: PQB Country/BG Exclusion
+entity_name: OptCntryExcp
+screen_name: Country Exception
 one_column_flag: true
 items:
 - !ruby/object:XDetailItem
@@ -13,8 +13,8 @@ items:
   key: cd
   item_name: country
   item_value: cntryCd
-  item_desc: ! 'Country '
-  desc_for_message: ! 'Country '
+  item_desc: Country
+  desc_for_message: Country
   html_element_id: elCountry
   html_element_name: elCountry
   checks: []
@@ -23,24 +23,6 @@ items:
   side: 
 - !ruby/object:XDetailItem
   internal_id: 2
-  service_name: getBusinessGroups
-  return_value: businessGroups
-  default_index: '0'
-  data_source: admin
-  control_type: dropdown
-  key: cd
-  item_name: businessGroup
-  item_value: busGrp
-  item_desc: Business Group
-  desc_for_message: Business Group
-  html_element_id: elBusinessGroup
-  html_element_name: elBusinessGroup
-  checks: []
-  on_check_fail: []
-  mandatory: true
-  side: 
-- !ruby/object:XDetailItem
-  internal_id: 3
   service_name: ''
   return_value: ''
   default_index: ''

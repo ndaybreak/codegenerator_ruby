@@ -33,36 +33,37 @@ class XDetailItem
   end
 
   def control_title_one
-	case control_type
-	when 'dropdown', 'text', 'text2', 'textarea'
-		if(mandatory)
-			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable pa-edit-mandatory-label"> ' + @item_desc + '</label>'
-		else
-			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable"> ' + @item_desc + '</label>'
-		end
-	when 'checkbox'
-		if(mandatory)
-			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable pa-edit-mandatory-label" for="' + @html_element_id + '"> ' + @item_desc + '</label>'
-		else
-			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable" for="' + @html_element_id + '"> ' + @item_desc + '</label>'
-		end
-	end
+  	case control_type
+  	when 'dropdown', 'text', 'text2', 'textarea'
+  		if(mandatory)
+  			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable pa-edit-mandatory-label"> ' + @item_desc + '</label>'
+  		else
+  			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable"> ' + @item_desc + '</label>'
+  		end
+  	when 'checkbox'
+  		if(mandatory)
+  			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable pa-edit-mandatory-label" for="' + @html_element_id + '"> ' + @item_desc + '</label>'
+  		else
+  			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label popup_table_lable" for="' + @html_element_id + '"> ' + @item_desc + '</label>'
+  		end
+  	end
   end
+  
   def control_title_two
-	case control_type
-	when 'dropdown', 'text', 'text2', 'textarea'
-		if(mandatory)
-			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label twoCols-label pa-edit-mandatory-label"> ' + @item_desc + '</label>'
-		else
-			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label twoCols-label"> ' + @item_desc + '</label>'
-		end
-	when 'checkbox'
-		if(mandatory)
-			titleLable = '<label class="col-lg-3 control-label add_form_label twoCols-label pa-edit-mandatory-label" for="' + @html_element_id + '"> ' + @item_desc + '</label>'
-		else
-			titleLable = '<label class="col-lg-3 control-label add_form_label twoCols-label" for="' + @html_element_id + '"> ' + @item_desc + '</label>'
-		end
-	end
+  	case control_type
+  	when 'dropdown', 'text', 'text2', 'textarea'
+  		if(mandatory)
+  			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label twoCols-label pa-edit-mandatory-label"> ' + @item_desc + '</label>'
+  		else
+  			titleLable = '<label class="col-lg-3 control-label add_form_label pa-standalone-label twoCols-label"> ' + @item_desc + '</label>'
+  		end
+  	when 'checkbox'
+  		if(mandatory)
+  			titleLable = '<label class="col-lg-3 control-label add_form_label twoCols-label pa-edit-mandatory-label" for="' + @html_element_id + '"> ' + @item_desc + '</label>'
+  		else
+  			titleLable = '<label class="col-lg-3 control-label add_form_label twoCols-label" for="' + @html_element_id + '"> ' + @item_desc + '</label>'
+  		end
+  	end
   end
 
 end
@@ -75,60 +76,60 @@ class XDetail
 
   def getDropdownSourceData
     returnStr = ""
-	@items.each do |item|
-		if item.data_source == 'admin'
-			returnStr += ("$scope." + item.return_value + " = AdminService." + item.service_name + "();\n\t")
-		end
-	end
-	returnStr
+    @items.each do |item|
+  		if item.data_source == 'admin'
+  			returnStr += ("$scope." + item.return_value + " = AdminService." + item.service_name + "();\n\t")
+  		end
+  	end
+  	returnStr
   end
 
   def initFormItemAdd
     returnStr = ""
-	@items.each do |item|
-		if item.data_source == 'admin'
-			returnStr += ("$scope.formItem." + item.item_name + " = $scope." + item.return_value + "[" + String(item.default_index) + "];\n\t\t")
-		end
-	end
-	returnStr
+  	@items.each do |item|
+  		if item.data_source == 'admin'
+  			returnStr += ("$scope.formItem." + item.item_name + " = $scope." + item.return_value + "[" + String(item.default_index) + "];\n\t\t")
+  		end
+  	end
+  	returnStr
   end
 
   def initFormItemUpdate
     returnStr = ""
-	@items.each do |item|
-		if item.data_source == 'admin'
-			returnStr += "idx = AdminService.getIndexOf(selected" + @entity_name + "." + item.item_value + ", $scope." + item.return_value + ", 'cd');\n\t\t"
-			returnStr += "$scope.formItem." + item.item_name + " = $scope." + item.return_value + "[idx];\n\n\t\t";
-		end
-	end
-	@items.each do |item|
-		if item.data_source == 'bool'
-			if item.return_value == 'Y'
-				returnStr += "$scope.formItem." + item.item_name + " = true;\n\t\t"
-			end
-		end
-	end
-	returnStr
+  	@items.each do |item|
+  		if item.data_source == 'admin'
+  			returnStr += "idx = AdminService.getIndexOf(selected" + @entity_name + "." + item.item_value + ", $scope." + item.return_value + ", 'cd');\n\t\t"
+  			returnStr += "$scope.formItem." + item.item_name + " = $scope." + item.return_value + "[idx];\n\n\t\t";
+  		end
+  	end
+  	@items.each do |item|
+  		if item.data_source == 'bool'
+  			if item.return_value == 'Y'
+  				returnStr += "$scope.formItem." + item.item_name + " = true;\n\t\t"
+  			end
+  		end
+  	end
+  	returnStr
   end
 
   def getSaveItem
     returnStr = ""
     @items.each do |item|
-		if item.data_source == 'admin'
-			returnStr += "$scope.item." + item.item_value + " = $scope.formItem." + item.item_name + ".cd;\n\t\t"
-		end
-	end
-	@items.each do |item|
-		if item.data_source == 'bool'
-			returnStr += "$scope.item." + item.item_value + " = ($scope.formItem['" + item.item_name + "'] === true) ? 'Y' : 'N';\n\t\t"
-		end
-	end
-	@items.each do |item|
-		if item.data_source == 'text2'
-			returnStr += "$scope.item." + item.item_name + " = $scope.item." + item.item_name + ".toUpperCase();\n\t\t"
-		end
-	end
-	returnStr
+  		if item.data_source == 'admin'
+  			returnStr += "$scope.item." + item.item_value + " = $scope.formItem." + item.item_name + ".cd;\n\t\t"
+  		end
+  	end
+  	@items.each do |item|
+  		if item.data_source == 'bool'
+  			returnStr += "$scope.item." + item.item_value + " = ($scope.formItem['" + item.item_name + "'] === true) ? 'Y' : 'N';\n\t\t"
+  		end
+  	end
+  	@items.each do |item|
+  		if item.data_source == 'text2'
+  			returnStr += "$scope.item." + item.item_name + " = $scope.item." + item.item_name + ".toUpperCase();\n\t\t"
+  		end
+  	end
+  	returnStr
   end
 end
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

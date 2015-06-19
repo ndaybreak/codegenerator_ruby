@@ -1,13 +1,13 @@
 --- !ruby/object:XGrid
 two_columns: false
 show_scroll: false
-entity_name: OptSqCtryBgExcp
-entity_title: PQB Country/BG Exclusion
+entity_name: OptCntryExcp
+entity_title: Country Exception
 doller_fields: []
 percent_fields: []
 input_date_fields:
 - lastModTs
-action: optSqCtryBgExcp
+action: optCntryExcp
 colms_info:
 - - ''
   - ''
@@ -22,31 +22,31 @@ colms_info:
 - - Sub Region 1
   - subregn1CdForDisplay
   - subregn1Cd
-  - false
+  - true
   - pg-col-width
 - - Sub Region 2
   - subregn2CdForDisplay
   - subregn2Cd
-  - false
+  - true
   - pg-col-width
 - - Sub Region 3
   - subregn3CdForDisplay
   - subregn3Cd
-  - false
+  - true
   - pg-col-width
 - - Country
   - cntryCdForDisplay
   - cntryCd
   - true
   - pg-col-width
-- - Business Group
-  - busGrp
-  - busGrp
-  - true
-  - pg-col-width
 - - Note
   - note
   - note
+  - true
+  - pg-col-width
+- - Teant
+  - tenant
+  - tenant
   - true
   - pg-col-width
 - - Updated By
@@ -57,7 +57,7 @@ colms_info:
 - - Updated On
   - lastModTs
   - lastModTs
-  - true
-  - pg-col-width
+  - false
+  - 
 bigint_colms:
 - lastModById

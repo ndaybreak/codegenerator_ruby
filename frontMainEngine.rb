@@ -14,10 +14,10 @@ class XGrid
     @entity_title
     @doller_fields
     @percent_fields
-	@input_date_fields
+	  @input_date_fields
     @action
-	@colms_info
-	@bigint_colms
+	  @colms_info
+	  @bigint_colms
     @two_columns = false
     @show_scroll = false
   end
@@ -153,29 +153,29 @@ class XGrid
   end
 =end
   def getAttrList
-	attrList = Array.new
-	@colms_info.each do |colm|
-		attrList.push(colm[2])
-	end
-	attrList.delete_at(0)
-	attrList
+  	attrList = Array.new
+  	@colms_info.each do |colm|
+  		attrList.push(colm[2])
+  		end
+  	attrList.delete_at(0)
+  	attrList
   end
   def getValueList
-	valueList = Array.new
-	@colms_info.each do |colm|
-		valueList.push(colm[1])
-	end
-	valueList.delete_at(0)
-	valueList
+  	valueList = Array.new
+  	@colms_info.each do |colm|
+  		valueList.push(colm[1])
+  	end
+  	valueList.delete_at(0)
+  	valueList
   end
   def getDollerFields
-	doller_fields ? doller_fields : []
+    doller_fields ? doller_fields : []
   end
   def getPercentFields
-	percent_fields ? percent_fields : []
+    percent_fields ? percent_fields : []
   end
   def getInputDateFields
-	input_date_fields ? input_date_fields : []
+    input_date_fields ? input_date_fields : []
   end
 end
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -188,7 +188,7 @@ def render_frontMainEngine
 		  # grid - html
 		  input = File.read( File.join(__FILE__, '../template/frontMain.html') )
 		  results = ERB.new(input, nil, '-').result()
-		  output = File.join(__FILE__, "../output/html/#{$xc.entity_name}Management.html")
+		  output = File.join(__FILE__, "../output/html/#{$xc.entity_name}Management_pg.html")
 		  File.open(output, 'w') { |file| file.write(results) }
 
 		  # grid - js

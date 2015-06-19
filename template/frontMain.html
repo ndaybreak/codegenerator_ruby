@@ -45,7 +45,7 @@
                 <table class="dataTable" data-anchor>
                     <thead>
                     	<!-- table title -->
-            <%= $xc.html_table_headers %>
+            <%= $xc.html_table_headers -%>
                         <!-- table filter -->
 			    		<tr class="even">
 			    		 	<td ng-show="tdShow"></td>
@@ -65,7 +65,7 @@
 					           	<div class="amid2Tooltip" style="width: 220px;" ng-if="isInputOrDatePickerBox(header.value,false)">
 									<input ng-if="header.cd !='amid2'" type="text" ng-model="selected[header.cd]" aria-controls="search_result">
 									<input ng-if="header.cd =='amid2'" type="text" ng-model="selected[header.cd]" aria-controls="search_result" data-placement="bottom" data-type="info" data-animation="am-fade-and-scale" bs-tooltip="tooltip" ng-mouseenter="tooltip.title = '<h5>Please input amid2 ID</h5>'">
-						           	<a class="btn btn-Primary relative-datepicker" style="margin-top: -20px;"  ng-click="columnFilter()">ok</a>
+						           	<a class="btn btn-Primary relative-datepicker"  ng-click="columnFilter()">ok</a>
 						        </div>
 						        <!-- ==========date-picker box==================== -->
 					           	<div class="datapicker" style="width: 372px;" ng-if="header.value =='lastModTs'">
